@@ -1,0 +1,236 @@
+:root {
+    --main-bg: #ffeaea;
+    --counter-bg: #481616;
+    /* --main-btn: #ffd1d1; */
+    --title-bg: #fd7272;
+    --timer-bg: white;
+    --btn-start-bg: #6dc781;
+}
+* {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    cursor: url(/assets/images/tomato.cur) 2 2, auto;
+}
+body {
+    background-color: var(--main-bg);
+    padding: 40px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.header__logo {
+    width: 50px;
+    height: 50px;
+}
+.tomato-accent {
+    color: var(--title-bg);
+}
+.header__title {
+    margin: 0;
+    font-size: 30px;
+}
+.timer-container {
+    /* display: flex; */
+    /* justify-content: center; */
+    margin: 0 auto;
+    padding: 25px;
+    width: 600px;
+    border-radius: 15px;
+    background-color: var(--timer-bg);
+}
+.timer-container__settings {
+    display: flex;
+    align-items: center;
+}
+
+.timer-container__img {
+    width: 30px;
+    height: 30px;
+}
+.timer-container__para {
+    margin: 0 auto 0 auto;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--title-bg);
+}
+.timer-container__counter {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 50px;
+    color: var(--counter-bg);
+}
+.timer-container__buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+    margin-top: 15px;
+}
+.btn-start,
+.btn-stop {
+    width: 150px;
+    height: 35px;
+    font-size: 25px;
+    border-radius: 5px;
+    color: var(--timer-bg);
+    background-color: var(--btn-start-bg);
+    border: none;
+}
+.btn-stop {
+    background-color: var(--title-bg);
+}
+.wrapper {
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: var(--timer-bg);
+    /* padding: 0 3%; */
+    padding: 25px;
+    width: 600px;
+    border-radius: 15px;
+    max-width: 50%;
+}
+.title {
+    color: var(--counter-bg);
+}
+.task {
+    display: flex;
+}
+#newTask {
+    width: 500px;
+    min-width: max-content;
+    height: 30px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.task__btn,
+.todo-list__btn,
+.todo-task__del {
+    background-color: var(--btn-start-bg);
+    height: 35px;
+    border: rgb(255, 187, 187);
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+.task__btn {
+    background-image: url(../images/tomato2.png);
+    background-color: var(--timer-bg);
+    margin-left: 5px;
+    width: 35px;
+    background-size: contain;
+}
+.todo-list__btn {
+    margin-top: 15px;
+    border-radius: 5px;
+    position: relative;
+    bottom: 0;
+    /* margin-bottom: 10px; */
+    background-color: var(--title-bg);
+}
+/* .task__btn:hover,
+.todo-list__btn:hover,
+.todo-task__del:hover {
+    background-color: rgb(255, 160, 160);
+    border: rgb(255, 160, 160);
+} */
+.notasks {
+    font-size: 20px;
+}
+.task-list {
+    padding: 10px 0 10px 0;
+    display: flex;
+}
+.task-list__text {
+    margin-left: 10px;
+}
+
+.todo__task {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.todo__task_complete .todo-task__text {
+    text-decoration: line-through;
+    color: rgb(0, 0, 0, 0.3);
+}
+
+.todo__checkbox {
+    margin-right: 16px;
+}
+.todo__checkbox input {
+    display: none;
+}
+
+.todo__checkbox input:checked + div::after {
+    display: block;
+}
+.todo__checkbox div {
+    width: 28px;
+    height: 28px;
+    border: 3px solid rgb(255, 187, 187);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+}
+.todo__checkbox div::after {
+    display: none;
+    content: "✓";
+    font-size: 23px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.todo-task__text {
+    width: fit-content;
+    font-size: 20px;
+    max-width: 96%;
+    word-break: break-all;
+    margin: 1%;
+}
+
+.todo-task__del {
+    margin-left: auto;
+    margin-right: 0;
+    height: auto;
+    width: 25px;
+    height: 23px;
+    text-align: center;
+}
+@media (max-width: 767px) {
+    #newTask {
+        width: fit-content;
+    }
+    .wrapper {
+        max-width: fit-content;
+    }
+}
+@media (max-width: 414px) {
+    .wrapper {
+        border: none;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url(../images/tomato-chan.png);
+    width: 350px;
+    height: 350px;
+    background-size: cover;
+}
+/* ::-webkit-scrollbar-thumb {
+    background-color: var(--main-bg);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+} */
+/* ::-webkit-scrollbar-track {
+    background-color: transparent;
+} */

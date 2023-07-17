@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pomodoro Tracker</title>
+        <link
+            rel="shortcut icon"
+            href="./assets/images/tomato.png"
+            type="image/x-icon"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assets/styles/normalize.css" />
+        <link rel="stylesheet" href="./assets/styles/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            <img
+                class="header__logo"
+                src="./assets/images/tomato.png"
+                alt="tomato"
+            />
+            <h2 class="header__title">
+                <span class="tomato-accent">Timely</span> tomato
+            </h2>
+        </header>
+        <div class="timer-container">
+            <div class="timer-container__settings">
+                <img
+                    class="timer-container__img"
+                    src="./assets/images/settings.png"
+                    alt="settings"
+                />
+                <p class="timer-container__para">Pomodoro Timer</p>
+            </div>
+            <div class="timer-container__counter">25 : 00</div>
+            <div class="timer-container__buttons">
+                <button class="btn-start" type="button">Start</button>
+                <button class="btn-stop" type="button">Stop</button>
+            </div>
+        </div>
+        <div class="wrapper">
+            <h1 class="title">My Todo List</h1>
+            <div class="task">
+                <input
+                    type="text"
+                    required
+                    id="newTask"
+                    placeholder="Add Task"
+                />
+                <button type="button" class="task__btn" id="addBtn"></button>
+            </div>
+            <div class="todo-list todo" id="tasks">
+                <p class="notasks">No tasks</p>
+            </div>
+            <button class="todo-list__btn" id="deleteBtn" disabled>
+                Clear List
+            </button>
+        </div>
+        <footer></footer>
+    </body>
+</html>
