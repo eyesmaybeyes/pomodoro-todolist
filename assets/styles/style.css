@@ -1,19 +1,36 @@
 :root {
     --main-bg: #ffeaea;
-    --counter-bg: #481616;
+    --counter-items: #481616;
+    --todo-title: #481616;
     /* --main-btn: #ffd1d1; */
-    --title-bg: #fd7272;
-    --timer-bg: white;
+    --tomato-btn: #fd7272;
+    --tomato-btn-hover: #f85858;
+    --timer-title: #fd7272;
+    --container-bg: white;
     --btn-start-bg: #6dc781;
+    --btn-start-hover: #4fa362;
 }
 * {
     margin: 0;
     font-family: "Lato", sans-serif;
     cursor: url(/assets/images/tomato.cur) 2 2, auto;
 }
+html,
 body {
+    height: 100%;
+}
+body {
+    background-image: url(../images/tomato-chan.png);
+    background-size: contain;
+    background-position-x: right;
+    background-repeat: no-repeat;
     background-color: var(--main-bg);
     padding: 40px;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #2c3e50;
 }
 .header {
     display: flex;
@@ -25,20 +42,18 @@ body {
     height: 50px;
 }
 .tomato-accent {
-    color: var(--title-bg);
+    color: var(--tomato-btn);
 }
 .header__title {
     margin: 0;
     font-size: 30px;
 }
 .timer-container {
-    /* display: flex; */
-    /* justify-content: center; */
-    margin: 0 auto;
+    margin: 25px auto 0 auto;
     padding: 25px;
-    width: 600px;
+    width: 580px;
     border-radius: 15px;
-    background-color: var(--timer-bg);
+    background-color: var(--container-bg);
 }
 .timer-container__settings {
     display: flex;
@@ -53,13 +68,13 @@ body {
     margin: 0 auto 0 auto;
     font-size: 30px;
     font-weight: bold;
-    color: var(--title-bg);
+    color: var(--timer-title);
 }
 .timer-container__counter {
     text-align: center;
     margin-top: 15px;
     font-size: 50px;
-    color: var(--counter-bg);
+    color: var(--counter-items);
 }
 .timer-container__buttons {
     display: flex;
@@ -73,25 +88,30 @@ body {
     height: 35px;
     font-size: 25px;
     border-radius: 5px;
-    color: var(--timer-bg);
+    color: var(--container-bg);
     background-color: var(--btn-start-bg);
     border: none;
 }
+.btn-start:hover {
+    background-color: var(--btn-start-hover);
+}
 .btn-stop {
-    background-color: var(--title-bg);
+    background-color: var(--tomato-btn);
+}
+.btn-stop:hover {
+    background-color: var(--tomato-btn-hover);
 }
 .wrapper {
     margin: 0 auto;
     margin-top: 20px;
-    background-color: var(--timer-bg);
-    /* padding: 0 3%; */
+    background-color: var(--container-bg);
     padding: 25px;
-    width: 600px;
+    width: 580px;
     border-radius: 15px;
     max-width: 50%;
 }
 .title {
-    color: var(--counter-bg);
+    color: var(--todo-title);
 }
 .task {
     display: flex;
@@ -109,14 +129,14 @@ body {
 .todo-task__del {
     background-color: var(--btn-start-bg);
     height: 35px;
-    border: rgb(255, 187, 187);
-    cursor: pointer;
+    border: none;
     color: white;
     font-size: 20px;
 }
 .task__btn {
     background-image: url(../images/tomato2.png);
-    background-color: var(--timer-bg);
+    background-color: var(--container-bg);
+    cursor: pointer;
     margin-left: 5px;
     width: 35px;
     background-size: contain;
@@ -126,17 +146,14 @@ body {
     border-radius: 5px;
     position: relative;
     bottom: 0;
-    /* margin-bottom: 10px; */
-    background-color: var(--title-bg);
+    background-color: var(--tomato-btn);
 }
-/* .task__btn:hover,
-.todo-list__btn:hover,
-.todo-task__del:hover {
-    background-color: rgb(255, 160, 160);
-    border: rgb(255, 160, 160);
-} */
+.todo-list__btn:hover {
+    background-color: var(--tomato-btn-hover);
+}
 .notasks {
     font-size: 20px;
+    color: var(--todo-title);
 }
 .task-list {
     padding: 10px 0 10px 0;
@@ -147,7 +164,6 @@ body {
 }
 
 .todo__task {
-    cursor: default;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -170,7 +186,7 @@ body {
 .todo__checkbox div {
     width: 28px;
     height: 28px;
-    border: 3px solid rgb(255, 187, 187);
+    border: 3px solid var(--tomato-btn);
     border-radius: 4px;
     position: relative;
     cursor: pointer;
@@ -185,6 +201,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    color: var(--todo-title);
 }
 .todo-task__text {
     width: fit-content;
@@ -192,6 +209,7 @@ body {
     max-width: 96%;
     word-break: break-all;
     margin: 1%;
+    color: var(--todo-title);
 }
 
 .todo-task__del {
@@ -216,15 +234,6 @@ body {
     }
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-image: url(../images/tomato-chan.png);
-    width: 350px;
-    height: 350px;
-    background-size: cover;
-}
 /* ::-webkit-scrollbar-thumb {
     background-color: var(--main-bg);
     border-radius: 20px;

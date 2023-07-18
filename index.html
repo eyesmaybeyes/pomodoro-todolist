@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pomodoro Tracker</title>
+        <title>Pomodoro</title>
         <link
             rel="shortcut icon"
             href="./assets/images/tomato.png"
@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="./assets/styles/style.css" />
     </head>
     <body>
-        <header class="header">
+        <div class="header">
             <img
                 class="header__logo"
                 src="./assets/images/tomato.png"
@@ -28,7 +28,7 @@
             <h2 class="header__title">
                 <span class="tomato-accent">Timely</span> tomato
             </h2>
-        </header>
+        </div>
         <div class="timer-container">
             <div class="timer-container__settings">
                 <img
@@ -51,7 +51,7 @@
                     type="text"
                     required
                     id="newTask"
-                    placeholder="Add Task"
+                    placeholder="Enter what you want to do"
                 />
                 <button type="button" class="task__btn" id="addBtn"></button>
             </div>
@@ -59,9 +59,8 @@
                 <p class="notasks">No tasks</p>
             </div>
             <button class="todo-list__btn" id="deleteBtn" disabled>
-                Clear List
+                Clear the list
             </button>
         </div>
-        <footer></footer>
     </body>
 </html>
