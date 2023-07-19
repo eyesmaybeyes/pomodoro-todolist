@@ -5,6 +5,15 @@ const dom = {
     deleteBtn: document.getElementById('deleteBtn'),
 }
 
+window.onload = function () {
+    const loadedTasks = JSON.parse(localStorage.getItem('tasks'));
+
+    if (loadedTasks) {
+        tasks.push(...loadedTasks);
+        showTasks(tasks);
+    }
+};
+
 const tasks = [];
 
 dom.newTask.addEventListener("keyup", function (e) {
@@ -19,7 +28,6 @@ dom.addBtn.onclick = () => {
         addTask(newTaskText, tasks)
         dom.newTask.value = ''
         showTasks(tasks)
-        dom.deleteBtn.removeAttribute('disabled');
     }
 }
 
@@ -31,10 +39,14 @@ function addTask(text, list) {
         isComplete: false
     }
     list.push(task)
-    console.log(task)
+    localStorage.setItem('tasks', JSON.stringify(list));
 }
 
 function showTasks(list) {
+    if (list.length === 0) {
+        dom.tasks.innerHTML = '<p class="notasks">No tasks</p>';
+        return;
+    }
     let htmlList = ''
     list.forEach((task) => {
         const cls = task.isComplete
@@ -68,6 +80,7 @@ dom.tasks.onclick = (event) => {
     if (isDeleteEl) {
         const task = target.parentElement
         const taskId = task.getAttribute('id')
+        console.log(taskId);
         deleteTask(taskId, tasks)
         showTasks(tasks)
     }
@@ -79,18 +92,19 @@ function changeTaskStatus(id, list) {
             task.isComplete = !task.isComplete
         }
     })
+    localStorage.setItem('tasks', JSON.stringify(list));
 }
 
 function deleteTask(id, list) {
-    list.forEach((task, idx) => {
-        if (task.id == id) {
-            delete list[idx]
-        }
-    })
-    console.log(list)
+    const index = list.findIndex(task => task.id == id);
+    if (index > -1) {
+        list.splice(index, 1);
+        localStorage.setItem('tasks', JSON.stringify(list));
+    }
 }
 
 dom.deleteBtn.addEventListener('click', function () {
     tasks.length = 0;
-    dom.tasks.innerHTML = `<p class="notasks">No tasks</p>`;
+    localStorage.removeItem('tasks');
+    showTasks(tasks);
 })
