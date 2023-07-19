@@ -79,7 +79,9 @@ a {
     margin-top: 15px;
 }
 .btn-start,
-.btn-stop {
+.btn-stop,
+.save-btn,
+.close-btn2 {
     width: 150px;
     height: 35px;
     font-size: 25px;
@@ -88,13 +90,16 @@ a {
     background-color: var(--btn-start-bg);
     border: none;
 }
-.btn-start:hover {
+.btn-start:hover,
+.save-btn:hover {
     background-color: var(--btn-start-hover);
 }
-.btn-stop {
+.btn-stop,
+.close-btn2 {
     background-color: var(--tomato-btn);
 }
-.btn-stop:hover {
+.btn-stop:hover,
+.close-btn2:hover {
     background-color: var(--tomato-btn-hover);
 }
 .wrapper {
@@ -227,9 +232,16 @@ a {
     width: 580px;
     margin-top: 20px;
 }
+.settings-body {
+    font-size: 25px;
+    color: var(--counter-items);
+}
 .settings-header {
     display: flex;
     justify-content: space-between;
+    color: var(--counter-items);
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 .close {
@@ -262,13 +274,12 @@ a {
     margin-bottom: 15px;
 }
 .settings-btns {
-    margin-left: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+    margin-top: 15px;
 }
-.save-btn {
+/* .save-btn {
     width: 100px;
     height: 40px;
     border-radius: 5px;
@@ -289,7 +300,7 @@ a {
     border-radius: 5px;
     background-color: var(--tomato-btn);
     color: var(--container-bg);
-}
+} */
 @media (min-width: 1280px) {
     body {
         background-image: url(../images/tomato-chan.png);

@@ -3,15 +3,9 @@ const dom = {
     addBtn: document.getElementById('addBtn'),
     tasks: document.getElementById('tasks'),
     deleteBtn: document.getElementById('deleteBtn'),
-    settingsBtn: document.getElementById('settings')
 }
 
 const tasks = [];
-
-dom.settingsBtn.addEventListener('click', function () {
-    let settings = document.querySelector('.settings__wrapper');
-    settings.style.display = (settings.style.display === 'block') ? 'none' : 'block';
-});
 
 dom.addBtn.onclick = () => {
     const newTaskText = dom.newTask.value;
@@ -94,4 +88,3 @@ dom.deleteBtn.addEventListener('click', function () {
     tasks.length = 0;
     dom.tasks.innerHTML = `<p class="notasks">No tasks</p>`;
 })
-
