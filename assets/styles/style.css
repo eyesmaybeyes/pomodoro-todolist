@@ -13,7 +13,7 @@
 * {
     margin: 0;
     font-family: "Lato", sans-serif;
-    cursor: url(/assets/images/tomato.cur) 2 2, auto;
+    cursor: url(../images/tomato.cur) 2 2, auto;
 }
 html,
 body {
