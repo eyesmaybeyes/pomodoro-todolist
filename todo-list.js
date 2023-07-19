@@ -7,6 +7,12 @@ const dom = {
 
 const tasks = [];
 
+dom.newTask.addEventListener("keyup", function (e) {
+    if (e.code === 'Enter') {
+        dom.addBtn.click();
+    }
+});
+
 dom.addBtn.onclick = () => {
     const newTaskText = dom.newTask.value;
     if (newTaskText) {

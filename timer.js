@@ -73,7 +73,6 @@ stopBtn.addEventListener('click', () => {
     interval = null;
 });
 
-
 saveBtn.addEventListener('click', () => {
     workDuration = workDurationInput.value * 60;
     restDuration = restDurationInput.value * 60;

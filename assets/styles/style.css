@@ -2,7 +2,7 @@
     --main-bg: #ffeaea;
     --counter-items: #481616;
     --todo-title: #481616;
-    /* --main-btn: #ffd1d1; */
+    --scrollbar-bg: #ffc7c7;
     --tomato-btn: #fd7272;
     --tomato-btn-hover: #f85858;
     --timer-title: #fd7272;
@@ -27,6 +27,28 @@ a {
     cursor: pointer;
     text-decoration: none;
     color: #2c3e50;
+}
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar {
+    width: 20px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-bg);
 }
 .header {
     display: flex;
@@ -279,28 +301,7 @@ a {
     column-gap: 15px;
     margin-top: 15px;
 }
-/* .save-btn {
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    margin-top: 15px;
-    font-weight: bold;
-    text-align: center;
-    background-color: var(--btn-start-bg);
-    color: var(--container-bg);
-}
-.close-btn2 {
-    width: 100px;
-    height: 40px;
-    margin-top: 15px;
-    border: none;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 5px;
-    background-color: var(--tomato-btn);
-    color: var(--container-bg);
-} */
+
 @media (min-width: 1280px) {
     body {
         background-image: url(../images/tomato-chan.png);
@@ -370,13 +371,3 @@ a {
         border: none;
     }
 }
-
-/* ::-webkit-scrollbar-thumb {
-    background-color: var(--main-bg);
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
-} */
-/* ::-webkit-scrollbar-track {
-    background-color: transparent;
-} */
