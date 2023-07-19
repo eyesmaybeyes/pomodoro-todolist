@@ -20,10 +20,6 @@ body {
     height: 100%;
 }
 body {
-    background-image: url(../images/tomato-chan.png);
-    background-size: contain;
-    background-position-x: right;
-    background-repeat: no-repeat;
     background-color: var(--main-bg);
     padding: 40px;
 }
@@ -108,7 +104,7 @@ a {
     padding: 25px;
     width: 580px;
     border-radius: 15px;
-    max-width: 50%;
+    /* max-width: 50%; */
 }
 .title {
     color: var(--todo-title);
@@ -219,13 +215,143 @@ a {
     width: 25px;
     height: 23px;
     text-align: center;
+    background-color: var(--tomato-btn);
+}
+.settings__wrapper {
+    display: none;
+    margin: 25px auto 0 auto;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: var(--container-bg);
+    /* height: 190px; */
+    width: 580px;
+    margin-top: 20px;
+}
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.close {
+    border: none;
+    background: transparent;
+}
+.close-btn,
+.settings-header > div > img {
+    height: 15px;
+    width: 15px;
+}
+.time-setting-form {
+    margin: 15px 15px 0 15px;
+}
+.timer-line {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.timer-line > input {
+    width: 65px;
+    height: 30px;
+    border-radius: 8px;
+    border: solid 1.5px #eaeaea;
+    text-align: center;
+}
+.timer-line:first-child {
+    margin-bottom: 15px;
+}
+.settings-btns {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.save-btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--btn-start-bg);
+    color: var(--container-bg);
+}
+.close-btn2 {
+    width: 100px;
+    height: 40px;
+    margin-top: 15px;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    background-color: var(--tomato-btn);
+    color: var(--container-bg);
+}
+@media (min-width: 1280px) {
+    body {
+        background-image: url(../images/tomato-chan.png);
+        background-size: contain;
+        background-position-x: right;
+        background-repeat: no-repeat;
+    }
 }
 @media (max-width: 767px) {
-    #newTask {
-        width: fit-content;
+    .wrapper,
+    .timer-container,
+    .settings__wrapper {
+        max-width: 500px;
     }
-    .wrapper {
-        max-width: fit-content;
+    .task__btn {
+        height: 31px;
+        width: 33px;
+    }
+}
+@media (max-width: 635px) {
+    body {
+        padding: 1.25em;
+    }
+    .wrapper,
+    .timer-container,
+    .settings__wrapper {
+        max-width: 400px;
+    }
+    .task__btn {
+        height: 27px;
+        width: 33px;
+    }
+}
+@media (max-width: 498px) {
+    body {
+        padding: 0;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .header {
+        margin: 5px;
+    }
+    .timer-container__counter {
+        font-size: 40px;
+    }
+    .header__title {
+        font-size: 25px;
+    }
+    #newTask {
+        height: 20px;
+    }
+    .timer-container__para {
+        font-size: 25px;
+    }
+    .wrapper,
+    .timer-container,
+    .settings__wrapper {
+        max-width: 300px;
+    }
+    .task__btn {
+        height: 23px;
     }
 }
 @media (max-width: 414px) {

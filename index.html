@@ -33,6 +33,7 @@
             <div class="timer-container__settings">
                 <img
                     class="timer-container__img"
+                    id="settings"
                     src="./assets/images/settings.png"
                     alt="settings"
                 />
@@ -42,6 +43,49 @@
             <div class="timer-container__buttons">
                 <button class="btn-start" type="button">Start</button>
                 <button class="btn-stop" type="button">Stop</button>
+            </div>
+        </div>
+        <div class="settings__wrapper">
+            <div class="settings-header">
+                <div>
+                    <img src="./assets/images/settings.png" alt="settings" />
+                    Settings
+                </div>
+                <button class="close" type="button">
+                    <img
+                        src="./assets/images/close.png"
+                        alt="close"
+                        class="close-btn"
+                    />
+                </button>
+            </div>
+            <div class="settings-body">
+                <form id="timer-form" class="time-setting-form">
+                    <p class="timer-line">
+                        <label for="work-duration">Time</label>
+                        <input
+                            type="number"
+                            id="work-duration"
+                            value="25"
+                            max="60"
+                            min="1"
+                        />
+                    </p>
+                    <p class="timer-line">
+                        <label for="rest-duration">Rest</label>
+                        <input
+                            type="number"
+                            id="rest-duration"
+                            value="5"
+                            max="60"
+                            min="1"
+                        />
+                    </p>
+                    <div class="settings-btns">
+                        <button type="button" class="save-btn">Save</button>
+                        <button type="button" class="close-btn2">Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="wrapper">
@@ -62,5 +106,6 @@
                 Clear the list
             </button>
         </div>
+        <script src="./app.js"></script>
     </body>
 </html>
