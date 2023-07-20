@@ -1,6 +1,7 @@
 # pomodoro-todolist
 
 <p>To-do list and time tracking app</p>
+<img width="700" alt="Screen" src="./assets/images/pomodoro-todolist.png">
 
 ##### 1️⃣ Start
 When clicked, the timer starts. When the study time is over, the alarm will automatically sound.
@@ -20,7 +21,6 @@ Click the ❌ button to remove the task from the list.
 ##### 6️⃣ Clear the list
 Сlick to clear the list to delete all tasks.
 
-<img width="700" alt="Screen" src="./assets/images/pomodoro-todolist.png">
 
 ## Getting started
 
